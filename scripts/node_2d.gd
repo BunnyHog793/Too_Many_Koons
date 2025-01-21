@@ -3,11 +3,17 @@ extends CharacterBody2D
 @export var move_speed : float = 500
 @export var roll_speed : float = 750
 @export var roll_time : float = .2
-@export var roll_timeout : float = .5
+@export var roll_timeout : float = .4
 
 var rolling : bool = false
 var rolling_speed = 0
 
+enum state {
+	IDLE,
+	MOVE,
+	RUN,
+	ROLL
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

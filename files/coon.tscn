@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvb8d"]
 size = Vector2(128, 128)
 
-[node name="coon" type="CharacterBody2D"]
+[node name="Koon" type="CharacterBody2D"]
 script = ExtResource("1_mee2s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
