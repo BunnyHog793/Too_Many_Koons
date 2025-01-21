@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5rf36pd5vfy"]
+
+[ext_resource type="PackedScene" uid="uid://dwuk0n2b54wwy" path="res://files/coon.tscn" id="1_q5q6d"]
+
+[node name="Level" type="Node2D"]
+
+[node name="coon" parent="." instance=ExtResource("1_q5q6d")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
