@@ -17,8 +17,7 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 disable_mode = 1
-collision_layer = 3
-collision_mask = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 60)
@@ -29,8 +28,10 @@ position = Vector2(1.52588e-05, 60)
 scale = Vector2(4.875, 0.9375)
 texture = ExtResource("2_jx73s")
 
-[node name="trashcan" parent="." instance=ExtResource("3_pv3cf")]
+[node name="trashcans" type="Node2D" parent="."]
+
+[node name="trashcan" parent="trashcans" instance=ExtResource("3_pv3cf")]
 position = Vector2(296, -112)
 
-[node name="trashcan2" parent="." instance=ExtResource("3_pv3cf")]
+[node name="trashcan2" parent="trashcans" instance=ExtResource("3_pv3cf")]
 position = Vector2(296, -184)

@@ -7,8 +7,8 @@ extends CharacterBody2D
 @export var roll_time : float = .15
 @export var roll_timeout : float = .2
 
-var interact_object = null
-
+var interact_object = []
+var last_dir = Vector2.ZERO
 var rolling : bool = false
 var rolling_speed = 0
 
@@ -28,11 +28,13 @@ func get_input_direction():
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
-	
+	last_dir = input_direction
 	return input_direction
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	
 	var input_direction = get_input_direction()
 	
 	if Input.is_action_just_pressed("activate"):
@@ -61,26 +63,31 @@ func _process(delta):
 func _on_roll_timer_timeout():
 	rolling_speed = 0
 	
-
-
 func _on_roll_timeout_timeout():
 	rolling = false
 
-
-
 		
 func activate():
+	var closest = null
+	var dist = 100000
 	if interact_object != null:
-		interact_object.activated()
-
+		for object in interact_object:
+			var distance = position.distance_squared_to(object.position)
+			if (distance < dist):
+				closest = object
+				dist = distance
+	if closest != null:
+		closest.activated()
 
 
 func _on_range_area_entered(area):
 		if area.is_in_group("activatable"):
-			interact_object = area
+			interact_object.append(area)
 			print("added")
 
 
+
 func _on_range_area_exited(area):
-	interact_object = null
+	var removed = interact_object.find(area)
+	interact_object.remove_at(removed)
 	print("left body")

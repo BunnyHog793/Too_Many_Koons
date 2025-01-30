@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cipaovn6k310c"]
 
-[ext_resource type="Script" path="res://Node2D.gd" id="1_83bup"]
+[ext_resource type="Script" path="res://scripts/Node2D.gd" id="1_d1tu7"]
 [ext_resource type="Texture2D" uid="uid://csoctq5algxqq" path="res://art/icon.svg" id="2_5bc0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n3pn"]
@@ -10,9 +10,13 @@ size = Vector2(64, 64)
 size = Vector2(64, 64)
 
 [node name="trashcan" type="Area2D" groups=["activatable"]]
-script = ExtResource("1_83bup")
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_d1tu7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_8n3pn")

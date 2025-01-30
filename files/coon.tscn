@@ -4,21 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://csoctq5algxqq" path="res://art/icon.svg" id="2_a7x0v"]
 [ext_resource type="Script" path="res://files/RayCast2D.gd" id="3_1kici"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxcy4"]
-radius = 64.0
-height = 128.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mqr6"]
+size = Vector2(128, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsw83"]
-radius = 96.3328
+radius = 88.0
 
 [node name="Koon" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_fr4tp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_a7x0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_hxcy4")
+shape = SubResource("RectangleShape2D_5mqr6")
 
 [node name="roll_timer" type="Timer" parent="."]
 
@@ -30,6 +31,8 @@ collision_mask = 2
 script = ExtResource("3_1kici")
 
 [node name="Range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_bsw83")

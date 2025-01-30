@@ -11,4 +11,5 @@ func _process(delta):
 
 func activated():
 	print("knocked over trashcan!!!!")
+	queue_free()
 	
