@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name koon
+
 
 @export var base_speed : float = 500
 @export var move_speed : float = 500
@@ -55,7 +57,7 @@ func _process(delta):
 	
 	input_direction.normalized()
 	
-	velocity = input_direction * (move_speed + rolling_speed) 
+	velocity = input_direction * (move_speed + rolling_speed)
 	
 	move_and_slide()
 
@@ -84,7 +86,6 @@ func _on_range_area_entered(area):
 		if area.is_in_group("activatable"):
 			interact_object.append(area)
 			print("added")
-
 
 
 func _on_range_area_exited(area):

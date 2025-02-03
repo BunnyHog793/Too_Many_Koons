@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cipaovn6k310c"]
 
 [ext_resource type="Script" path="res://scripts/Node2D.gd" id="1_d1tu7"]
-[ext_resource type="Texture2D" uid="uid://csoctq5algxqq" path="res://art/icon.svg" id="2_5bc0w"]
+[ext_resource type="Texture2D" uid="uid://bi3hlbgsedst1" path="res://art/trashcan.png" id="2_1kn0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n3pn"]
-size = Vector2(64, 64)
+size = Vector2(64, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba3ji"]
-size = Vector2(64, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bd277"]
+radius = 32.0
+height = 96.0
 
 [node name="trashcan" type="Area2D" groups=["activatable"]]
 collision_layer = 4
@@ -19,13 +20,16 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_8n3pn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.501961, 0.392157, 0.231373, 1)
-self_modulate = Color(0.729412, 0.682353, 0.0901961, 1)
+position = Vector2(7.76, -15.755)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_5bc0w")
+texture = ExtResource("2_1kn0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ba3ji")
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_bd277")
+
+[node name="activatable_componant" type="Node2D" parent="."]
