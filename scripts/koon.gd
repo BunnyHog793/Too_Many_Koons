@@ -43,7 +43,6 @@ func _process(delta):
 	activate()
 	roll()
 	run()
-	input_direction.normalized()
 	slide_down()
 	flip()
 	move_and_slide()
@@ -69,7 +68,7 @@ func get_input_direction():
 		input_direction = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")
-		)
+		).normalized()
 
 #roll logic
 func roll() -> void:

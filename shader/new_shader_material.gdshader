@@ -14,7 +14,7 @@ void vertex() {
 void fragment() {
 	// Called for every pixel the material is visible on.
 	if (COLOR.a > 0.0) {
-		COLOR = mix(COLOR, in_color, mix_amt);
+		COLOR = mix(COLOR, in_color, mix_amt * (sin(TIME*time_factor) + .5));
 		//COLOR = vec4(1.0-COLOR.r, 1.0-COLOR.g, 1.0-COLOR.b, 1.0);
 	}
 }
