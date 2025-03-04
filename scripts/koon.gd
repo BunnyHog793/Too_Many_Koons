@@ -1,5 +1,7 @@
 extends CharacterBody2D
 class_name koon
+@export_category("base stats")
+@export var hp = 5
 
 @export_category("Movement")
 @export var base_speed : float = 500
@@ -18,7 +20,7 @@ class_name koon
 
 
 var interact_objects = []
-var last_dir = Vector2.ZERO
+#var last_dir = Vector2.ZERO
 var rolling : bool = false
 var rolling_speed = 0
 var locked = false
@@ -70,7 +72,7 @@ func get_input_direction():
 		)
 
 #roll logic
-func roll():
+func roll() -> void:
 	if Input.is_action_just_pressed("roll") && not rolling && input_direction != Vector2.ZERO:
 		#locked = true
 		animation_player.play("roll")

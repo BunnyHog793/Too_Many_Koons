@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cuyjytla6x04a"]
+
+[ext_resource type="Shader" path="res://shader/new_shader_material.gdshader" id="1_emcws"]
+
+[resource]
+shader = ExtResource("1_emcws")
+shader_parameter/time_factor = 0.315
+shader_parameter/amplitude = Vector2(10, 6.85)
+shader_parameter/in_color = Vector4(0.35, 0.585, 0.895, 1)
+shader_parameter/mix_amt = 0.525

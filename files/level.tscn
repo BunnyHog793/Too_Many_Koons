@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://m5rf36pd5vfy"]
+[gd_scene load_steps=10 format=4 uid="uid://m5rf36pd5vfy"]
 
 [ext_resource type="Texture2D" uid="uid://cxqwkjqsdfcbm" path="res://art/tiles.png" id="1_38a05"]
 [ext_resource type="PackedScene" uid="uid://dwuk0n2b54wwy" path="res://files/coon.tscn" id="1_q5q6d"]
+[ext_resource type="Texture2D" uid="uid://csoctq5algxqq" path="res://art/icon.svg" id="2_jx73s"]
 [ext_resource type="PackedScene" uid="uid://cipaovn6k310c" path="res://files/trashcan.tscn" id="3_pv3cf"]
 [ext_resource type="PackedScene" uid="uid://dqnaif6rb30s4" path="res://files/Enemy/enemy.tscn" id="5_8ciq7"]
+[ext_resource type="Material" uid="uid://cuyjytla6x04a" path="res://shader/new_shader_material.tres" id="5_h5y8h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pqvty"]
 vertices = PackedVector2Array(64, 64, -64, 64, -64, -64, 64, -64)
@@ -59,3 +61,9 @@ position = Vector2(672, -160)
 
 [node name="Enemy" parent="." instance=ExtResource("5_8ciq7")]
 position = Vector2(-1224, 376)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("5_h5y8h")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jx73s")
